@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1 {
+            text-align: center;
+            margin: auto;
+        }
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 21px;
+
+        }
+        table {
+            border-collapse: collapse;
+            width: 300px;
+            margin: auto;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 4px;
+        }
+        th {
+            background: #fc0;
+            height: 40px;
+            vertical-align: bottom;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cars List</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Brand</th>
+            <th>Series</th>
+            <th>Color</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="car : ${cars}">
+            <td th:text="${car.model}"></td>
+            <td th:text="${car.serial}"></td>
+            <td th:text="${car.color}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="center">
+        <a href="/">Come back</a>
+    </div>
+</body>
+</html>
